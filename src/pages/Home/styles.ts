@@ -11,6 +11,7 @@ export const Container = styled.View`
 
 export const Content = styled.View`
   align-items: center;
+  width: 300px;
   /* border: solid 1px #fff; */
 `;
 
@@ -28,18 +29,19 @@ export const Text = styled.Text`
   font-size: 18px;
   text-align: center;
   color: #eeeeee;
+  margin-bottom: 5px;
 `;
 
 export const TextInput = styled.TextInput`
-  border: solid 1px #eee;
+  border: solid 1px #989898;
   font-size: 14px;
-  color: #eee;
+  color: #989898;
   background-color: #000;
   width: 300px;
   height: 30px;
   margin-top: 20px;
   border-radius: 5px;
-  padding: 0 15px;
+  padding: 0 10px;
 `;
 
 export const SignInButton = styled(RectButton)`
@@ -55,7 +57,7 @@ export const SignInButton = styled(RectButton)`
 
 export const TextButton = styled.Text`
   font-size: 16px;
-  color: #eee;
+  color: #fff;
 `;
 
 export const Footer = styled.View`

@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 
 import api from '../../services/api';
 
@@ -23,15 +23,37 @@ interface SignUpFormData {
 }
 
 const Home: React.FC = () => {
+  const [username, setUsername] = useState('username');
+  const [password, setPassword] = useState('password');
+
+  const [users, setUsers] = useState({});
+  const [passwords, setPasswords] = useState({});
+
+  const handleUsernameText = useCallback(text => {
+    setUsername(text);
+  }, []);
+
+  const handlePasswordText = useCallback(text => {
+    setPassword(text);
+  }, []);
+
+  const handleSignIn = useCallback(() => {
+    console.log(users, passwords);
+  }, []);
+
+  useEffect(() => {
+    api.get('/users').then(({ data }) => setUsers);
+  }, []);
+
   return (
     <Container>
       <Content>
         <LogoSign source={WelcomeImage} />
         <Title>Welcome home</Title>
         <Text>We always have a cup of hot tea and a warm blanket</Text>
-        <TextInput value="Username" />
-        <TextInput value="Password" />
-        <SignInButton>
+        <TextInput onChangeText={handleUsernameText} value={username} />
+        <TextInput onChangeText={handlePasswordText} value={password} />
+        <SignInButton onPress={handleSignIn}>
           <TextButton>Sign In</TextButton>
         </SignInButton>
         <Footer>
