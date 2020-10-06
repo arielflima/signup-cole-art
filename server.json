@@ -1,8 +1,22 @@
 {
   "users": [
     {
+      "id": "1",
+      "username": "admin",
+      "password": "333333",
+      "email": "admin@admin.com"
+    },
+    {
+      "id": "2",
       "username": "arielflima",
-      "password": "333333"
+      "password": "333333",
+      "email": "admin@admin.com"
+    },
+    {
+      "id": "3",
+      "username": "teste",
+      "password": "333333",
+      "email": "admin@admin.com"
     }
   ]
 }

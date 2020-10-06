@@ -1,5 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 
+import { useNavigation } from '@react-useNavigation/native';
+
 import api from '../../services/api';
 
 import {
@@ -29,6 +31,8 @@ const SignIn: React.FC = () => {
   const [users, setUsers] = useState({});
   const [passwords, setPasswords] = useState({});
 
+  const navigation = useNavigation();
+
   const handleUsernameText = useCallback(text => {
     setUsername(text);
   }, []);
@@ -54,7 +58,7 @@ const SignIn: React.FC = () => {
         <TextInput
           onChangeText={handleUsernameText}
           value={username}
-          placeholder="Username"
+          placeholder="E-mail"
         />
         <TextInput
           onChangeText={handlePasswordText}
