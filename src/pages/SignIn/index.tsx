@@ -22,9 +22,9 @@ interface SignUpFormData {
   password: string;
 }
 
-const Home: React.FC = () => {
-  const [username, setUsername] = useState('username');
-  const [password, setPassword] = useState('password');
+const SignIn: React.FC = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const [users, setUsers] = useState({});
   const [passwords, setPasswords] = useState({});
@@ -51,8 +51,16 @@ const Home: React.FC = () => {
         <LogoSign source={WelcomeImage} />
         <Title>Welcome home</Title>
         <Text>We always have a cup of hot tea and a warm blanket</Text>
-        <TextInput onChangeText={handleUsernameText} value={username} />
-        <TextInput onChangeText={handlePasswordText} value={password} />
+        <TextInput
+          onChangeText={handleUsernameText}
+          value={username}
+          placeholder="Username"
+        />
+        <TextInput
+          onChangeText={handlePasswordText}
+          value={password}
+          placeholder="Password"
+        />
         <SignInButton onPress={handleSignIn}>
           <TextButton>Sign In</TextButton>
         </SignInButton>
@@ -65,4 +73,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default SignIn;

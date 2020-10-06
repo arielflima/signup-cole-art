@@ -35,8 +35,8 @@ export const Text = styled.Text`
 export const TextInput = styled.TextInput`
   border: solid 1px #989898;
   font-size: 14px;
-  color: #989898;
-  background-color: #000;
+  color: #000;
+  background-color: #fff;
   width: 300px;
   height: 30px;
   margin-top: 20px;
